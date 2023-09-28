@@ -94,7 +94,6 @@ module.exports = configure(function (/* ctx */) {
       extendViteConf(viteConf) {
         viteConf.plugins = [
           [decorators, { legacy: true, decoratorsBeforeExport: true }],
-          // [decorators, { decoratorsBeforeExport: true }],
           [classProperties, { loose: true }],
         ];
         return viteConf;

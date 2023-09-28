@@ -4,11 +4,10 @@
 </template>
 
 <script lang="ts">
-// import { defineComponent } from 'vue';
-import { Component, Vue } from 'vue-facing-decorator';
+import { Component, Vue, toNative } from 'vue-facing-decorator';
 
 @Component
-export default class App extends Vue {
+class App extends Vue {
   name: 'App';
 
   mounted() {
@@ -16,5 +15,6 @@ export default class App extends Vue {
   }
 
 };
+export default toNative(App)
 
 </script>

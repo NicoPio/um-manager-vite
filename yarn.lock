@@ -5431,11 +5431,6 @@ vary@^1, vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
 
-vite-plugin-babel-dev@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/vite-plugin-babel-dev/-/vite-plugin-babel-dev-1.0.2.tgz#5ecca145adfab8517351478afb7485ba1961ebc9"
-  integrity sha512-6niMl9fcvJQAG+SicsupMOQ/7xxe0fNGIMCZ3ySoqScseF4Fm08hLByxQCu9jpq+GQPQy8VYw0ReQiaJqLbQjg==
-
 vite-plugin-babel@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/vite-plugin-babel/-/vite-plugin-babel-1.1.3.tgz#4ce93f573f8f49e1760bce51b07860876f705c76"
