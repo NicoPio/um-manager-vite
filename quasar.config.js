@@ -10,8 +10,8 @@
 
 const { configure } = require('quasar/wrappers');
 const path = require('path');
-const decorators = require('@babel/plugin-proposal-decorators');
-const classProperties = require('@babel/plugin-transform-class-properties');
+// const decorators = require('@babel/plugin-proposal-decorators');
+// const classProperties = require('@babel/plugin-transform-class-properties');
 
 module.exports = configure(function (/* ctx */) {
   return {
@@ -76,8 +76,6 @@ module.exports = configure(function (/* ctx */) {
       // viteVuePluginOptions: {},
 
       vitePlugins: [
-        // ['@babel/plugin-proposal-decorators', { legacy: true }],
-        // ['@babel/plugin-proposal-class-properties'],
         [
           '@intlify/vite-plugin-vue-i18n',
           {
@@ -100,17 +98,18 @@ module.exports = configure(function (/* ctx */) {
       //   ];
       //   return viteConf;
       // },
+
       extendViteConf(viteConf) {
         viteConf.plugins.push({
           name: 'vite-plugin-babel',
           config: {
             plugins: [
-              '@babel/plugin-proposal-decorators',
-              '@babel/plugin-proposal-class-properties',
+              ['@babel/plugin-proposal-decorators', { legacy: true }],
+              ['@babel/plugin-proposal-class-properties', { loose: true }],
             ],
           },
         });
-
+        console.log('viteConf', viteConf.plugins);
         return viteConf;
       },
     },
