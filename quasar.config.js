@@ -56,7 +56,7 @@ module.exports = configure(function (/* ctx */) {
         node: 'node16',
       },
 
-      // transpile: ['vue-facing-decorator'],
+      transpileDependencies: ['vue-facing-decorator'],
       // bundler: 'vite',
       vueRouterMode: 'history', // available values: 'hash', 'history'
       // vueRouterBase,
@@ -76,6 +76,8 @@ module.exports = configure(function (/* ctx */) {
       // viteVuePluginOptions: {},
 
       vitePlugins: [
+        // ['@babel/plugin-proposal-decorators', { legacy: true }],
+        // ['@babel/plugin-proposal-class-properties'],
         [
           '@intlify/vite-plugin-vue-i18n',
           {
@@ -91,11 +93,24 @@ module.exports = configure(function (/* ctx */) {
           },
         ],
       ],
+      // extendViteConf(viteConf) {
+      //   viteConf.plugins = [
+      //     [decorators, { legacy: true, decoratorsBeforeExport: true }],
+      //     [classProperties, { loose: true }],
+      //   ];
+      //   return viteConf;
+      // },
       extendViteConf(viteConf) {
-        viteConf.plugins = [
-          [decorators, { legacy: true, decoratorsBeforeExport: true }],
-          [classProperties, { loose: true }],
-        ];
+        viteConf.plugins.push({
+          name: 'vite-plugin-babel',
+          config: {
+            plugins: [
+              '@babel/plugin-proposal-decorators',
+              '@babel/plugin-proposal-class-properties',
+            ],
+          },
+        });
+
         return viteConf;
       },
     },

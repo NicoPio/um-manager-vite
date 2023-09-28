@@ -1,8 +1,8 @@
-/* eslint-env node */
+// /* eslint-env node */
 // module.exports = {
 //   presets: ['@quasar/babel-preset-app'],
 //   plugins: [
-//     ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }],
-//     ['@babel/plugin-transform-class-properties'],
+//     ['@babel/plugin-proposal-decorators', { legacy: true }],
+//     ['@babel/plugin-proposal-class-properties'],
 //   ],
 // };
